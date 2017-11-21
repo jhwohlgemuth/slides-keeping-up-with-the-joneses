@@ -1,0 +1,68 @@
+<section id="es6-feature-object-shorthand">
+    <section id="object-shorthand">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>6 Object Shorthand</h3>
+    </section>
+    <section id="object-shorthand-syntax">
+        <h3>Object shorthand</h3>
+        <p>So pretty</p>
+        <div>
+            <pre><code class="javascript">
+    const latitude = 42;
+    const longitude = 42;
+    const altitude = 9001;
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // ES5
+    var coordinates = {
+        latitude: latitude,
+        longitude: longitude,
+        altitude: altitude;
+    }
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // ES6
+    const coordinates = {latitude, longitude, altitude};
+            </code></pre>
+        </div>
+    </section>
+    <section id="object-shorthand-syntax-nested">
+        <h3>Object shorthand</h3>
+        <p>Nested objects</p>
+        <div>
+            <pre><code class="javascript">
+    const bar = () => {/* do stuff */};
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // ES5
+    var API = {
+        foo: {
+            bar: bar
+        }
+    };
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // ES6
+    const API = {foo: {bar}};
+            </code></pre>
+        </div>
+    </section>
+    <section id="object-shorthand-eslint-rules" style="text-align:left;">
+        <h3 style="text-align:center;margin-bottom:1em;"><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>Lint Rules for Object Shorthand</h3>
+        <pre><code class="javascript">
+    rules: {
+        'object-shorthand': ['error', 'properties']// autofix
+    }
+        </code></pre>
+        <ul style="padding-left:2em;">
+            <li><a href="https://eslint.org/docs/rules/object-shorthand">object-shorthand</a></li>
+        </ul>
+    </section>
+</section>

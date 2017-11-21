@@ -1,0 +1,95 @@
+<section>
+    <section id="past-present-and-future">
+        <h3>Past ― Pr<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>ent ― Future</h3>
+    </section>
+    <section id="history">
+        <h3>Historical High Not<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span></h3>
+        <ul>
+            <li class="fragment">Netscape and Sun employ Brendan Eich to create a scripting language to interface with Java (1995)</li>
+            <li class="fragment">In about 2 weeks, Eich created <i style="color:yellow;">mocha</i></li>
+            <li class="fragment">™ issues with "mocha" ― re-branded as <i style="color:yellow;">LiveScript</i></li>
+            <li class="fragment">Popularity of Java ― re-branded as <i style="color:yellow;">JavaScript</i></li>
+            <li class="fragment">Netscape asked <a href="https://www.ecma-international.org/default.htm">Ecma</a> to maintain ISO standard (1996)</li>
+            <li class="fragment"><a href="http://tmsearch.uspto.gov/bin/showfield?f=doc&state=4804:dy5avd.2.4">Oracle owned JavaScript™</a> ― maintained as <i style="color:yellow;">ECMAScript</i> (1997)</li>
+            <li class="fragment">Specification, <a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA-262</a>, maintained by <a href="https://www.ecma-international.org/memento/TC39-M.htm">TC39</a></li>
+        </ul>
+    </section>
+    <section id="release-history">
+        <h3>History of Releas<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span></h3>
+        <ul>
+            <li class="fragment"><span style="font-family:courier;font-weight:bold;">1997</span> ― ES1 published</li>
+            <li class="fragment"><span style="font-family:courier;font-weight:bold;">1998</span> ― ES2 published</li>
+            <li class="fragment"><span style="font-family:courier;font-weight:bold;">2002</span> ― ES3 published</li>
+            <li class="fragment" style="color:yellow;">JavaScript (ECMAScript) gets famous</li>
+            <li class="fragment" style="color:red;">ES4 skipped because of reasons</li>
+            <li class="fragment"><span style="font-family:courier;font-weight:bold;">2011</span> ― ES5 published</li>
+            <li class="fragment"><span style="font-family:courier;font-weight:bold;">2015</span> ― ES6 published</li>
+            <li class="fragment" style="color:yellow;">TC39 transitions to yearly release schedule</li>
+            <li class="fragment"><span style="font-family:courier;font-weight:bold;">2016</span> ― ES7 (ES2016) published</li></li>
+            <li class="fragment"><span style="font-family:courier;font-weight:bold;">2017</span> ― ES8 (ES2017) published in June</li></li>
+        </ul>
+    </section>
+    <section id="fun-fact">
+        <h3>Inter<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>ting Fact</h3>
+        <p>Ecma also maintains Ada, C#, COBOL, Dart and Fortran</p>
+    </section>
+    <section id="TC39-proposal-process">
+        <h3>TC39 Proposal Proc<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>s</h3>
+        <p><a href="https://github.com/tc39/proposals">TC39 ECMAScript proposal tracker</a></p>
+        <table>
+            <tr>
+                <td>Stage 0</td>
+                <td>"strawman"</td>
+                <td>entry point</td>
+            </tr>
+            <tr>
+                <td>Stage 1</td>
+                <td>"proposal"</td>
+                <td>polyfills / demos</td>
+            </tr>
+            <tr>
+                <td>Stage 2</td>
+                <td>"draft"</td>
+                <td>experimental</td>
+            </tr>
+            <tr>
+                <td>Stage 3</td>
+                <td>"candidate"</td>
+                <td>spec compliant</td>
+            </tr>
+            <tr>
+                <td>Stage 4</td>
+                <td>"finished"</td>
+                <td>ready to be shipped</td>
+            </tr>
+        </table>
+    </section>
+    <section id="my-favorites">
+        <h3>My Favorit<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span></h3>
+        <ul>
+            <li><a href="https://github.com/tc39/proposal-temporal">temporal (1)</a> ― <i>better date and time handling</i></li>
+            <li><a href="https://github.com/tc39/proposal-bigint">BigInt (3)</a> ― <i>second primitive numeric type</i></li>
+            <li><a href="https://github.com/tc39/proposal-pipeline-operator">pipeline operator (1)</a> ― <i>OCaml-ish API addition</i></li>
+
+            <pre><code class="javascript">
+    let result = "hello"
+        |> doubleSay
+        |> capitalize
+        |> exclaim;// "Hello, hello!"
+            </code></pre>
+
+            <li><a href="https://github.com/tc39/proposal-optional-chaining">optional chaining (1)</a> ― <i>Built-in <code>_.get</code></i></li>
+
+            <pre><code class="javascript">
+    const street = user.address?.street
+            </code></pre>
+        </ul>
+    </section>
+    <section id="feature-availability">
+        <h3>It's a journey, not a d<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>tination</h3>
+        <p class="fragment"><b>Verify</b> support with <a href="https://kangax.github.io/compat-table/es6/">ES compatibility table</a> and/or <a href="https://developer.mozilla.org/en-US/">MDN</a></p>
+        <p class="fragment"><b>Track</b> features with <a href="https://github.com/tc39/proposals">TC39 proposal tracker</a> (click "watch")</p>
+        <p class="fragment"><b>Enable</b> features with <a href="https://babeljs.io/docs/plugins/">Babel plugins and presets</a></p>
+        <p class="fragment"><b>Enforce</b> compliance with <a href="https://www.npmjs.com/package/eslint-plugin-compat">eslint-plugin-compat</a></p>
+    </section>
+</section>

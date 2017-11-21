@@ -1,0 +1,105 @@
+<section id="es-feature-const-and-let">
+    <section id="const-and-let">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>6 const and let</h3>
+    </section>
+    <section id="usage">
+        <h3>Wid<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>pread Usage</h3>
+        <ul>
+            <li><code>const</code> ― use by default</li>
+            <li><code>let</code> ― use when re-assignment is required</li>
+            <li><code>var</code> ― "old 'n busted'"</li>
+        </ul>
+    </section>
+    <section id="details-const">
+        <h3>const</h3>
+        <p>Block scoped, cannot be re-assigned or redeclared</p>
+        <pre class="fragment"><code class="javascript">
+    const powerLevel = 8999;
+    powerLevel = powerLevel + 2;// TypeError!
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    const powerLevel;// SyntaxError!
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    function foo() {
+        const x = 1;
+        if (true) {
+            const x = 2;// x === 2
+        }
+        // x === 1
+    }
+        </code></pre>
+    </section>
+    <section id="details-let">
+        <h3>let</h3>
+        <p>Block scoped and re-assignable</p>
+        <pre class="fragment"><code class="javascript">
+    let powerLevel = 8999;
+    powerLevel = powerLevel + 2;// It's over 9000!
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    if (/* condition */) {
+        let foo;
+        let foo;// SyntaxError!
+    }
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    function foo() {
+        let x = 1;
+        if (true) {
+            let x = 2;// x === 2
+        }
+        // x === 1
+    }
+        </code></pre>
+    </section>
+    <section id="why-not-var">
+        <h3>The D<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>cent of var</h3>
+        <p>Variables declared with <code>var</code> DO NOT have block scope</p>
+        <pre><code class="javascript">
+    var x = 1;
+    {
+      var x = 2;
+    }
+    console.log(x);// 2
+        </code></pre>
+        <pre><code class="javascript">
+    let x = 1;
+    {
+      let x = 2;
+    }
+    console.log(x);// 1
+        </code></pre>
+    </section>
+    <section id="remember-let-variable-hoisting">
+        <h3>Things to remember</h3>
+        <p><code>let</code> bindings are not subject to Variable Hoisting</p>
+        <div class="fragment">
+            <pre><code class="javascript">
+    function someFunction() {
+        console.log(bar);// undefined
+        console.log(foo);// ReferenceError
+        var bar = 1;
+        let foo = 2;
+    }
+            </code></pre>
+        </div>
+    </section>
+    <section id="const-and-let-eslint-rules" style="text-align:left;">
+        <h3 style="text-align:center;margin-bottom:1em;"><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>Lint Rules for const and let</h3>
+        <pre><code class="javascript">
+    rules: {
+        'no-const-assign': ['error'],
+        'no-use-before-define': ['error', {functions: false}],
+        'no-var': ['error'],// autofix
+        'prefer-const': ['error']// autofix
+    }
+        </code></pre>
+        <ul style="padding-left:2em;">
+            <li><a href="https://eslint.org/docs/rules/no-const-assign">no-const-assign</a></li>
+            <li><a href="https://eslint.org/docs/rules/no-use-before-define">no-use-before-define</a></li>
+            <li><a href="https://eslint.org/docs/rules/no-var">no-var</a></li>
+            <li><a href="https://eslint.org/docs/rules/prefer-const">prefer-const</a></li>
+        </ul>
+    </section>
+</section>
