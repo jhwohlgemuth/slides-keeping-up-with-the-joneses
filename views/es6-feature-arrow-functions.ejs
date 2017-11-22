@@ -67,6 +67,14 @@
     const isEven = num => (num % 2 === 0);
             </code></pre>
         </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Default values
+    const foo = (val = 42) => console.log(val);
+    foo(9001);// 9001
+    foo();// 42
+            </code></pre>
+        </div>
     </section>
     <section id="arrow-functions-syntax-more-than-one">
         <h3>Arrow Functions</h3>
@@ -88,7 +96,7 @@
     </section>
     <section id="arrow-functions-syntax-higher-order">
         <h3>Arrow Functions</h3>
-        <p>Higher order functions (currying)</p>
+        <p>Higher order functions (ex: currying)</p>
         <div class="fragment">
             <pre><code class="javascript">
     // ES5

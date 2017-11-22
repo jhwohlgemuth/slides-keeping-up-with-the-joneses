@@ -1,5 +1,122 @@
 <section id="es6-feature-destructering">
     <section id="destructuring">
-        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>6 Destructuring</h3>
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>6 Destructuring Assignment</h3>
+    </section>
+    <section id="destructuring-syntax-objects">
+        <h3>D<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>tructuring Assignment</h3>
+        <p>Objects</p>
+        <div>
+            <pre><code class="javascript">
+    const data = {height: 42, width: 43};
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Assignment
+    const {height, width} = data;
+    console.log(height);// 42
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Assignment with new names
+    const {height: h, width: w} = data;
+    console.log(h);// 42
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Default values
+    const {height, width, depth = 9001} = data;
+    console.log(depth);// 9001
+            </code></pre>
+        </div>
+    </section>
+    <section id="destructuring-syntax-objects-advanced">
+        <h3>D<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>tructuring Assignment</h3>
+        <p>Objects ― Advanced usage</p>
+        <div>
+            <pre><code class="javascript">
+    const data = {height: 42, width: 43};
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Computed property assignment
+    const key = 'height';
+    const {[key]: h} = data;
+    console.log(height);// ReferenceError!
+    console.log(h);// 42
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Assignment separate from declaration
+    let foo;
+    ({foo} = {foo: 42})
+    console.log(foo);// 42
+            </code></pre>
+        </div>
+    </section>
+    <section id="destructuring-syntax-arrays">
+        <h3>D<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>tructuring Assignment</h3>
+        <p>Arrays ― Similar to object destructuring</p>
+        <div>
+            <pre><code class="javascript">
+    const numbers = [1, 2, 3, 4, 5];
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Assignment
+    const [first, second] = numbers;
+    console.log(first, second);// 1 2
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Variable swap (re-assignment)
+    let a = 1;
+    let b = 2;
+    [b, a] = [a, b];
+    console.log(a, b);// 2 1
+            </code></pre>
+        </div>
+    </section>
+    <section id="destructuring-syntax-arrays-advanced">
+        <h3>D<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>tructuring Assignment</h3>
+        <p>Arrays ― Advanced usage</p>
+        <div>
+            <pre><code class="javascript">
+    const numbers = [1, 2, 3, 4, 5];
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Ignore values
+    const [first, , third, , fifth] = numbers;
+    console.log(first, third, fifth);// 1 3 5
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // Default values
+    const [one, two, three, four, five, six = 6] = numbers;
+    console.log(six);// 6
+            </code></pre>
+        </div>
+    </section>
+    <section id="destructuring-eslint-rules" style="text-align:left;">
+        <h3 style="text-align:center;margin-bottom:1em;"><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>Lint Rules for Destructuring</h3>
+        <pre><code class="javascript">
+    rules: {
+        'no-empty-pattern': ['error'],
+        'prefer-destructuring': ['error']
+    }
+        </code></pre>
+        <ul style="padding-left:2em;">
+            <li><a href="https://eslint.org/docs/rules/prefer-destructuring">prefer-destructuring</a></li>
+            <li><a href="https://eslint.org/docs/rules/no-empty-pattern">no-empty-pattern</a></li>
+        </ul>
     </section>
 </section>
