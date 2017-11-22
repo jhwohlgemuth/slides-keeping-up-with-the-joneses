@@ -2,4 +2,122 @@
     <section id="rest-and-spread">
         <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>6 Rest and Spread</h3>
     </section>
+    <section id="rest-parameters">
+        <h3>R<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>t parameters</h3>
+        <p>From arguments to an array</p>
+        <div>
+            <pre><code class="javascript" style="overflow:hidden;">
+    // ES5
+    function f(a, b) {
+      var args = Array.prototype.slice.call(arguments, f.length);
+      // do something with args array
+    }
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // ES6
+    function f(a, b, ...args) {
+      // do something with args array
+    }
+            </code></pre>
+        </div>
+    </section>
+    <section id="spread-syntax">
+        <h3>Spread Syntax</h3>
+        <p>Say goodbye to <code>apply</code></p>
+        <div>
+            <pre><code class="javascript">
+    function f(x, y, z) {}
+    const args = [1, 2, 3];
+            </code></pre>
+        </div>
+        <div>
+            <pre><code class="javascript">
+    // ES5
+    f.apply(null, args);
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // ES6
+    f(...args);
+            </code></pre>
+        </div>
+    </section>
+    <section id="spread-syntax-lodash">
+        <h3>Spread Syntax</h3>
+        <p>Using lodash to spread function arguments</p>
+        <div>
+            <pre><code class="javascript">
+    function f(a, b, c) {}
+    const args = [1, 2, 3];
+            </code></pre>
+        </div>
+        <div>
+            <pre><code class="javascript">
+    const _ = require('lodash');
+
+    // _.spread is based on the spread operator
+    _.spread(f)(args);
+            </code></pre>
+        </div>
+    </section>
+    <section id="spread-syntax-arrays">
+        <h3>Spread syntax</h3>
+        <p>Array operations</p>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // array clone (shallow)
+    let foo = [1, 2, 3];
+    let bar = [...foo];
+    foo[2] = 'boot';
+    console.log(foo);// [1, 2, "boot"]
+    console.log(bar);// [1, 2, 3]
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <pre><code class="javascript">
+    // array concatenation
+    const dig = [1, 2, 3];
+    const its = [4, 5, 6];
+    const digits = [...dig, ...its];// [1, 2, 3, 4, 5, 6]
+            </code></pre>
+        </div>
+    </section>
+    <section id="remember-rest-spread-object-properties">
+        <h3>Things to remember</h3>
+        <p>Rest/Spread syntax for object properties is still <a href="https://github.com/tc39/proposal-object-rest-spread">Stage 3</a></p>
+        <div class="">
+            <pre><code class="javascript">
+    // Rest properties
+    const {a, b, ...other} = {a: 1, b: 2, c: 3, d: 4};
+    a;// 1
+    b;// 2
+    other;// {c: 3, d: 4}
+            </code></pre>
+        </div>
+        <div class="">
+            <pre><code class="javascript">
+    // Spread properties
+    const n = {a, b, ...other};
+    n;// {a: 1, b: 2, c: 3, d: 4}
+            </code></pre>
+        </div>
+    </section>
+    <section id="rest-and-spread-eslint-rules" style="text-align:left;">
+        <h3 style="text-align:center;margin-bottom:1em;"><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>Lint Rules for Rest & Spread Syntax</h3>
+        <pre><code class="javascript">
+    rules: {
+        'prefer-rest-params': ['warn'],
+        'prefer-spread': ['error'],// autofix
+        'rest-spread-spacing': ['error']// autofix
+    }
+        </code></pre>
+        <ul style="padding-left:2em;">
+            <li><a href="https://eslint.org/docs/rules/prefer-rest-params">prefer-rest-params</a></li>
+            <li><a href="https://eslint.org/docs/rules/prefer-spread">refer-spread</a></li>
+            <li><a href="https://eslint.org/docs/rules/rest-spread-spacing">rest-spread-spacing</a></li>
+        </ul>
+    </section>
 </section>
