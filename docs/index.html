@@ -903,6 +903,95 @@
     </section>
 </section>
 
+		<section>
+    <section id="more-to-explore">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>6 Miscellaneous</h3>
+        <h3></h3>
+    </section>
+    <section id="array">
+        <h3>New Array Featur<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span></h3>
+        <div class="fragment">
+            <p><code>Array.from</code></p>
+            <pre><code class="js">
+    Array.from('BAE');// ['B', 'A', 'E']
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <p><code>Array.prototype.fill</code></p>
+            <pre><code class="js">
+    let glass = ['empty', 'empty', 'empty'];
+    glass.fill('water');// glass === ['water', 'water', 'water']
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <p><code>Array.prototype.find</code></p>
+            <pre><code class="js">
+    [1, 2, 3].find(isEven);// 2
+    [1, 2, 3].findIndex(isEven);// 1
+            </code></pre>
+        </div>
+    </section>
+    <section id="set">
+        <h3><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a></h3>
+        <p>lets you store unique values of any type</p>
+        <pre class="fragment"><code class="js">
+    // items are unique
+    let ids = new Set([1, 1, 1, 2, 3, 3]);// Set {1, 2, 3}
+        </code></pre>
+        <pre class="fragment"><code class="js">
+    // familiar API
+    ids.add(4);// Set {1, 2, 3, 4}
+    ids.delete(1);// Set {2, 3, 4}
+    ids.has(3);// true
+    ids.size;// 3
+    ids.clear();// ids.size === 0
+        </code></pre>
+        <pre class="fragment"><code class="js">
+    // iterate through elements in insertion order
+    ids.add(1).add(2).add(3);// Set {1, 2, 3}
+    ids.forEach(id => console.log(id));
+        </code></pre>
+    </section>
+    <section id="replace-lodsash">
+        
+    </section>
+    <section id="more-more-more">
+        <h3>The Journey continu<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>...</h3>
+        <ul>
+            <li>iterate with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of"><code>for...of</code></a>!</li>
+            <li><code>yield</code> stuff with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">generator functions</a></li>
+            <li>meta program with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect"><code>Reflect</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code></a></li>
+            <li>create enum types and meta properties with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"><code>Symbol</code></a></li>
+            <li>make better dictionaries with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"><code>Map</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"><code>WeakMap</code></a></li>
+            <li>craft cleaner constructors with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">classes</a></li>
+        </ul>
+    </section>
+</section>
+
+		<section>
+    <section id="es7-features">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>7 Features</h3>
+    </section>
+    <section id="es7-features-details">
+        <h3>New in <span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>7</h3>
+        <div class="fragment">
+            <p><code>includes</code></p>
+            <pre><code>
+    const numbers = [1, 2, 3, 4, 5];
+    numbers.includes(3);// true
+            </code></pre>
+        </div>
+        <div class="fragment">
+            <p><code>**</code></p>
+            <pre><code>
+    // exponentiation operator
+    const result = 4 ** 4;
+    console.log(result);// 16
+            </code></pre>
+        </div>
+    </section>
+</section>
+
 		<section id="es8-feature-async-and-await">
     <section id="async-and-await">
         <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>8 Async functions</h3>
@@ -1000,8 +1089,10 @@
         <p>...what if I want to use bleeding edge featur<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>?</p>
     </section>
     <section id="babel" data-background-image="img/babel.png" data-background-size="contain" data-background-transition="zoom"></section>
-
-
+    <section id="compilers">
+        <blockquote><a href="https://tomdale.net/2017/09/compilers-are-the-new-frameworks/">"Compilers are the new frameworks"</a></blockquote>
+        <p>― Tom Dale</p>
+    </section>
 </section>
 
 		<section id="references" data-background="img/web-surfing-time.gif">
@@ -1014,6 +1105,8 @@
 					<li><a href="https://github.com/tc39/proposals">ECMAScript Proposals</a></li>
 					<li><a href="https://kangax.github.io/compat-table/es6/">ECMAScript Compatability Table</a></li>
 					<li><a href="https://developer.mozilla.org/en-US/">MDN web docs</a></li>
+					<li><a href="https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/">Metaprogramming in ES6</a></li>
+					<li><a href="https://tomdale.net/2017/09/compilers-are-the-new-frameworks/">Compilers are the new Frameworks</a></li>
 					<li><a href="https://babeljs.io/">Babel Homepage</a></li>
 				</ul>
 			</div>
