@@ -1,5 +1,88 @@
 <section id="es8-feature-async-and-await">
     <section id="async-and-await">
-        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>8 Async and Await</h3>
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>8 Async functions</h3>
+    </section>
+    <section id="async-and-await-overview">
+        <h3>Overview</h3>
+        <ul>
+            <li>Part of <span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>8 (ES2017) specification</li>
+            <li>Supported in FF 52+, Chrome 55+ and Node 8+</li>
+            <li><code>await</code> can only be used inside an <code>async</code> function</li>
+        </ul>
+    </section>
+    <section id="async-functions-example">
+        <h3>Let's get asynchronous</h3>
+        <pre><code class="javascript">
+    async function getAllTheThings() {
+        const foo = await getStuff();// async operation
+        const bar = await getMoreStuff();// also async
+        console.log('All done!');
+        return [...foo, ...bar];
+    }
+        </code></pre>
+        <pre><code class="javascript">
+    getAllTheThings();// ... "All done!"
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    // you can also use Promise.prototype.then
+    getAllTheThings().then(data => {
+        data.forEach(item => console.log(item));
+    });
+        </code></pre>
+    </section>
+    <section id="async-functions-example-jquery">
+        <h3>Example Using jQuery</h3>
+        <pre><code class="javascript">
+    const $ = require('jquery');
+    const url = '/some/api/endpoint';
+        </code></pre>
+        <pre><code class="javascript">
+    // ES5
+    $.get({url: url}).then(function() {
+        console.log('All done!');
+    });
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    // ES8
+    (async () => {
+        await $.get({url});
+        console.log('All done!');
+    })();
+        </code></pre>
+    </section>
+    <section id="async-functions-use-case">
+        <h3>AW<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>OME Use Case</h3>
+        <p><a href="https://try-puppeteer.appspot.com/">Puppeteer</a> ― Headless Chrome Node API</p>
+        <pre><code class="javascript">
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.goto('https://example.com');
+    await page.screenshot({path: 'screenshot.png'});
+
+    // Turn synchronous into asynchronous
+    console.log(await page.content());
+
+    await browser.close();
+        </code></pre>
+    </section>
+    <section id="remember-await-math">
+        <h3>Things to remember</h3>
+        <p>You can use <code>await</code> in expr<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>sions</p>
+        <pre><code class="javascript">
+    const foo = Promise.resolve(42);
+    const bar = Promise.resolve(43);
+        </code></pre>
+        <div class="fragment">
+            <pre><code class="javascript">
+    (async () => {
+        console.log(await foo + await bar);// 85
+    })();
+            </code></pre>
+        </div>
+    </section>
+    <section id="async-and-await-eslint-rules">
+        <h3 style="text-align:center;margin-bottom:1em;"><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>Lint Rules for Arrow Functions</h3>
+        <p>There are a few rules, but none that I would presently recommend</p>
     </section>
 </section>
