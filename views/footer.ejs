@@ -12,6 +12,12 @@
 			transition: 'slide', // none/fade/slide/convex/concave/zoom
 			slideNumber: 'c/t',
 			// Optional reveal.js plugins
+			chalkboard: {
+				theme: 'whiteboard',
+				// toggleChalkboardButton: false,
+				toggleChalkboardButton: { left: "60px", bottom: "30px", top: "auto", right: "auto" },
+				toggleNotesButton: { left: "91px", bottom: "30px", top: "auto", right: "auto" },
+			},
 			dependencies: [
 				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 				// Interpret Markdown in <section> elements
@@ -19,8 +25,17 @@
         		{ src: './components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 				{ src: './components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 				{ src: './components/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: './components/reveal.js/plugin/notes/notes.js', async: true }
-			]
+				{ src: './components/reveal.js/plugin/notes/notes.js', async: true },
+				{ src: './components/reveal.js/plugin/chalkboard/chalkboard.js' },
+				{ src: './components/reveal.js/node_modules/reveal.js-menu/menu.js', async: true }
+			],
+			keyboard: {
+			    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+			    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			    68: function() { RevealChalkboard.download() }	// downlad recorded chalkboard drawing when 'd' is pressed
+			}
 		});
 
 	</script>

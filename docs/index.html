@@ -1110,14 +1110,14 @@
 </section>
 
 		<section id="introducing-babel">
-    <section id="babel-question-1" data-markdown>
+    <section id="babel-question-1" data-menu-title="Support old browsers?" data-markdown>
         ...what if I have to support old browsers?
     </section>
-    <section id="babel-question-2">
+    <section id="babel-question-2" data-menu-title="Use bleeding edge features?">
         <p>...what if I want to use bleeding edge featur<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>?</p>
     </section>
-    <section id="babel" data-background-image="img/babel.png" data-background-size="contain" data-background-transition="zoom"></section>
-    <section id="compilers">
+    <section id="babel" data-menu-title="Babel" data-background-image="img/babel.png" data-background-size="contain" data-background-transition="zoom"></section>
+    <section id="compilers" data-menu-title="Compilers are the new frameworks">
         <blockquote><a href="https://tomdale.net/2017/09/compilers-are-the-new-frameworks/">"Compilers are the new frameworks"</a></blockquote>
         <p>― Tom Dale</p>
     </section>
@@ -1158,6 +1158,12 @@
 			transition: 'slide', // none/fade/slide/convex/concave/zoom
 			slideNumber: 'c/t',
 			// Optional reveal.js plugins
+			chalkboard: {
+				theme: 'whiteboard',
+				// toggleChalkboardButton: false,
+				toggleChalkboardButton: { left: "60px", bottom: "30px", top: "auto", right: "auto" },
+				toggleNotesButton: { left: "91px", bottom: "30px", top: "auto", right: "auto" },
+			},
 			dependencies: [
 				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 				// Interpret Markdown in <section> elements
@@ -1165,8 +1171,17 @@
         		{ src: './components/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 				{ src: './components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 				{ src: './components/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: './components/reveal.js/plugin/notes/notes.js', async: true }
-			]
+				{ src: './components/reveal.js/plugin/notes/notes.js', async: true },
+				{ src: './components/reveal.js/plugin/chalkboard/chalkboard.js' },
+				{ src: './components/reveal.js/node_modules/reveal.js-menu/menu.js', async: true }
+			],
+			keyboard: {
+			    67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+			    66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			    46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			     8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			    68: function() { RevealChalkboard.download() }	// downlad recorded chalkboard drawing when 'd' is pressed
+			}
 		});
 
 	</script>
