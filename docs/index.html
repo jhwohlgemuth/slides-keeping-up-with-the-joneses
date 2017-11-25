@@ -880,16 +880,16 @@
             <pre><code class="javascript">
     // Rest properties
     const {a, b, ...other} = {a: 1, b: 2, c: 3, d: 4};
-    a;// 1
-    b;// 2
-    other;// {c: 3, d: 4}
+    console.log(a);// 1
+    console.log(b);// 2
+    console.log(other);// {c: 3, d: 4}
             </code></pre>
         </div>
         <div class="">
             <pre><code class="javascript">
     // Spread properties
     const n = {a, b, ...other};
-    n;// {a: 1, b: 2, c: 3, d: 4}
+    console.log(n);// {a: 1, b: 2, c: 3, d: 4}
             </code></pre>
         </div>
     </section>
@@ -960,17 +960,38 @@
         </code></pre>
     </section>
     <section id="replace-lodsash">
-        
+        <h3>A little l<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>s Lodash</h3>
+        <pre class="fragment"><code>
+    // new functions
+    [1, 2, 3, 4].fill('na');// ['na', 'na', 'na']
+    ['a', 'b', 'c'].includes('b');// true
+        </code></pre>
+        <pre class="fragment"><code class="js">
+    // one-line FP utitilty functions
+    const identity = val => val;
+    const compact = arr => arr.filter(x => !!x);
+    const [head, ...tail] = [1, 2, 3, 4, 5, 6];
+        </code></pre>
+        <pre class="fragment"><code class="js">
+    // partial application
+    const add = (x, y) => x + y;
+    const addOne = val => add(val, 1);
+    addOne(9000);// 9001
+    // curry
+    const add = x => y => x + y;
+    const addOne = add(1);
+    addOne(9000);// 9001
+        </code></pre>
     </section>
     <section id="more-more-more">
         <h3>The Journey continu<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>...</h3>
         <ul>
-            <li>iterate with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of"><code>for...of</code></a>!</li>
-            <li><code>yield</code> stuff with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">generator functions</a></li>
-            <li>meta program with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect"><code>Reflect</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code></a></li>
-            <li>create enum types and meta properties with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"><code>Symbol</code></a></li>
-            <li>make better dictionaries with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"><code>Map</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"><code>WeakMap</code></a></li>
-            <li>craft cleaner constructors with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">classes</a></li>
+            <li class="fragment">iterate with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of"><code>for...of</code></a>!</li>
+            <li class="fragment"><code>yield</code> stuff with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*">generator functions</a></li>
+            <li class="fragment">meta program with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect"><code>Reflect</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code></a></li>
+            <li class="fragment">create enum types and meta properties with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol"><code>Symbol</code></a></li>
+            <li class="fragment">make better dictionaries with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"><code>Map</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"><code>WeakMap</code></a></li>
+            <li class="fragment">craft cleaner constructors with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">classes</a></li>
         </ul>
     </section>
 </section>
@@ -983,14 +1004,14 @@
         <h3>New in <span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>7</h3>
         <div class="fragment">
             <p><code>includes</code></p>
-            <pre><code>
+            <pre><code class="js">
     const numbers = [1, 2, 3, 4, 5];
     numbers.includes(3);// true
             </code></pre>
         </div>
         <div class="fragment">
             <p><code>**</code></p>
-            <pre><code>
+            <pre><code class="js">
     // exponentiation operator
     const result = 4 ** 4;
     console.log(result);// 16
@@ -1008,7 +1029,7 @@
         <ul>
             <li>Part of <span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>8 (ES2017) specification</li>
             <li>Supported in FF 52+, Chrome 55+ and Node 8+</li>
-            <li><code>await</code> can only be used inside an <code>async</code> function</li>
+            <li><code>await</code> can <b>ONLY</b> be used <i>inside</i> an <code>async</code> function</li>
         </ul>
     </section>
     <section id="async-functions-example">
@@ -1112,6 +1133,7 @@
 					<li><a href="https://github.com/tc39/proposals">ECMAScript Proposals</a></li>
 					<li><a href="https://kangax.github.io/compat-table/es6/">ECMAScript Compatability Table</a></li>
 					<li><a href="https://developer.mozilla.org/en-US/">MDN web docs</a></li>
+					<li><a href="https://youmightnotneed.com/lodash/">You Might Not Need Lodash</a></li>
 					<li><a href="https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/">Metaprogramming in ES6</a></li>
 					<li><a href="https://tomdale.net/2017/09/compilers-are-the-new-frameworks/">Compilers are the new Frameworks</a></li>
 					<li><a href="https://babeljs.io/">Babel Homepage</a></li>

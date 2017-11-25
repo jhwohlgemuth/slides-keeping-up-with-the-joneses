@@ -92,16 +92,16 @@
             <pre><code class="javascript">
     // Rest properties
     const {a, b, ...other} = {a: 1, b: 2, c: 3, d: 4};
-    a;// 1
-    b;// 2
-    other;// {c: 3, d: 4}
+    console.log(a);// 1
+    console.log(b);// 2
+    console.log(other);// {c: 3, d: 4}
             </code></pre>
         </div>
         <div class="">
             <pre><code class="javascript">
     // Spread properties
     const n = {a, b, ...other};
-    n;// {a: 1, b: 2, c: 3, d: 4}
+    console.log(n);// {a: 1, b: 2, c: 3, d: 4}
             </code></pre>
         </div>
     </section>
