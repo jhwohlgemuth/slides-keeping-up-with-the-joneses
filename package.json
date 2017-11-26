@@ -8,7 +8,7 @@
     "build": "npm run clean && grunt",
     "ensure-components-dir": "mkdirp public/components",
     "postinstall": "npm run ensure-components-dir && ncp node_modules/reveal.js public/components/reveal.js/.",
-    "dev": "concurrently --kill-others \"npm start\" \"browser-sync start -p http://localhost:5001/ --files views\"",
+    "dev": "concurrently --kill-others \"npm start\" \"browser-sync start -p http://localhost:1337/ --files views\"",
     "static-preview": "http-server --silent ./docs/",
     "ensure-docs": "path-exists docs && echo \"docs/ exists\" || grunt",
     "test": "npm run ensure-docs && concurrently --kill-others \"npm run static-preview\" \"mocha\"",
