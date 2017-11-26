@@ -53,8 +53,7 @@
         <div class="fragment">
             <pre><code class="javascript">
     const button = text => `<button>${text}</button>`;
-
-    button`push me`// "<button>push me</button>"
+    console.log(button`push me`);// "<button>push me</button>"
             </code></pre>
         </div>
         <div class="fragment">
@@ -65,7 +64,8 @@
         return text[0] + language;
     };
     const thing = 'Java';
-    fix`I love ${thing}`// "I love JavaScript"
+    // apply tag function to template literal
+    console.log(fix`I love ${thing}`);// "I love JavaScript"
             </code></pre>
         </div>
     </section>

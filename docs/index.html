@@ -558,8 +558,7 @@
         <div class="fragment">
             <pre><code class="javascript">
     const button = text => `<button>${text}</button>`;
-
-    button`push me`// "<button>push me</button>"
+    console.log(button`push me`);// "<button>push me</button>"
             </code></pre>
         </div>
         <div class="fragment">
@@ -570,7 +569,8 @@
         return text[0] + language;
     };
     const thing = 'Java';
-    fix`I love ${thing}`// "I love JavaScript"
+    // apply tag function to template literal
+    console.log(fix`I love ${thing}`);// "I love JavaScript"
             </code></pre>
         </div>
     </section>
@@ -608,7 +608,7 @@
         latitude: latitude,
         longitude: longitude,
         altitude: altitude;
-    }
+    };
             </code></pre>
         </div>
         <div class="fragment">
@@ -1159,8 +1159,9 @@
 			slideNumber: 'c/t',
 			// Optional reveal.js plugins
 			chalkboard: {
-				theme: 'whiteboard',
+				// theme: 'whiteboard',
 				// toggleChalkboardButton: false,
+				color: [ '#f7df1e', 'rgba(255,255,255,0.5)' ],
 				toggleChalkboardButton: { left: "60px", bottom: "30px", top: "auto", right: "auto" },
 				toggleNotesButton: { left: "91px", bottom: "30px", top: "auto", right: "auto" },
 			},
