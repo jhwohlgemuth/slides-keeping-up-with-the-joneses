@@ -9,13 +9,13 @@
 	<meta name="author" content="Jason Wohlgemuth">
 	<title>Keeping Up with the Joneses</title>
 	<!-- Font Awesome! -->
-	<link href="components/reveal.js/node_modules/reveal.js-menu/font-awesome-4.3.0/css/font-awesome.min.css?v=3" rel="stylesheet">
+	<link href="components/reveal.js/node_modules/reveal.js-menu/font-awesome-4.3.0/css/font-awesome.min.css?v=2" rel="stylesheet">
 	<link rel="stylesheet" href="components/reveal.js/css/reveal.css">
 	<link rel="stylesheet" href="components/reveal.js/css/theme/black.css" id="theme">
 	<!-- Code syntax highlighting -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 	<link rel="stylesheet" href="css/custom.css">
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement( 'link' );
@@ -152,6 +152,8 @@
         <p class="fragment"><b>Enforce</b> compliance with <a href="https://www.npmjs.com/package/eslint-plugin-compat">eslint-plugin-compat</a></p>
     </section>
 </section>
+
+		<section id="dancing-bear" data-background-iframe="https://giphy.com/embed/admqzXw4rPPxu"></section>
 
 		<section id="es-feature-const-and-let">
     <section id="const-and-let">
@@ -1110,6 +1112,80 @@
     </section>
 </section>
 
+		<section>
+    <section  id="reindeer-games">
+        <h3>Reindeer Gam<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span></h3>
+        <p>Which version contains the feature?</p>
+    </section>
+    <section id="question-1">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    Object.values(obj);
+        </code></pre>
+        <h1 class="fragment">8</h1>
+    </section>
+    <section id="question-2">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    'foobar'.startsWith('foo');
+        </code></pre>
+        <h1 class="fragment">6</h1>
+    </section>
+    <section id="question-3">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    Number.isFinite(value);
+        </code></pre>
+        <div class="fragment">
+            <h1>6</h1>
+            <p>(different than global <code>isFinite</code>)</p>
+        </div>
+    </section>
+    <section id="question-4">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    Math.trunc(4.669);// 4
+        </code></pre>
+        <h1 class="fragment">6</h1>
+    </section>
+    <section id="question-5">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    Object.freeze(obj);
+        </code></pre>
+        <h1 class="fragment">5</h1>
+    </section>
+    <section id="question-6">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    'na'.repeat(8);// Batman!
+        </code></pre>
+        <h1 class="fragment">6</h1>
+    </section>
+    <section id="question-7">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    Object.entries({foo: 'bar'});// [['foo', 'bar']]
+        </code></pre>
+        <h1 class="fragment">8</h1>
+    </section>
+    <section id="question-8">
+        <h3><span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>5/6/7/8?</h3>
+        <br>
+        <pre><code class="js">
+    'abc'.padStart(6, "123465");// "123abc"
+        </code></pre>
+        <h1 class="fragment">8</h1>
+    </section>
+</section>
+
 		<section id="introducing-babel">
     <section id="babel-question-1" data-menu-title="Support old browsers?" data-markdown>
         ...what if I have to support old browsers?
@@ -1163,7 +1239,7 @@
 				themes: false,
 				transitions: false,
 				markers: true,
-				loadIcons: true
+				loadIcons: false
 			},
 			chalkboard: {
 				// theme: 'whiteboard',
