@@ -153,7 +153,7 @@
     </section>
 </section>
 
-		<section id="dancing-bear" data-background-iframe="https://giphy.com/embed/admqzXw4rPPxu"></section>
+		<section id="dancing-bear" data-menu-title="Dancing Bear" data-background-iframe="https://giphy.com/embed/admqzXw4rPPxu"></section>
 
 		<section id="es-feature-const-and-let">
     <section id="const-and-let">
@@ -1073,6 +1073,24 @@
         await $.get({url});
         console.log('All done!');
     })();
+        </code></pre>
+    </section>
+    <section id="async-functions-for-of">
+        <h3>Using async in loops</h3>
+        <pre><code class="javascript">
+    const numbers = [1, 2, 3, 4, 5];
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    // NOPE
+    numbers.forEach(num => {
+        await Promise.resolve(num).then(console.log);
+    });
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    // YEP
+    for (let num of numbers) {
+        await Promise.resolve(num).then(console.log);
+    }
         </code></pre>
     </section>
     <section id="async-functions-use-case">

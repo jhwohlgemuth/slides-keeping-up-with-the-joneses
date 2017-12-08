@@ -50,6 +50,24 @@
     })();
         </code></pre>
     </section>
+    <section id="async-functions-for-of">
+        <h3>Using async in loops</h3>
+        <pre><code class="javascript">
+    const numbers = [1, 2, 3, 4, 5];
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    // NOPE
+    numbers.forEach(num => {
+        await Promise.resolve(num).then(console.log);
+    });
+        </code></pre>
+        <pre class="fragment"><code class="javascript">
+    // YEP
+    for (let num of numbers) {
+        await Promise.resolve(num).then(console.log);
+    }
+        </code></pre>
+    </section>
     <section id="async-functions-use-case">
         <h3>AW<span style="font-weight:bold;color:#333;background-color:yellow;">ES</span>OME Use Case</h3>
         <p><a href="https://try-puppeteer.appspot.com/">Puppeteer</a> ― Headless Chrome Node API</p>
